@@ -56,7 +56,7 @@ class DocumentController extends Controller
         $searchModel = new DocumentSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('@vendor/lowbase/yii2-document/views/document/index', [
+        return $this->render('@vendor/macfiss/yii2-document/views/document/index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -73,7 +73,7 @@ class DocumentController extends Controller
         $model =  $this->findModel($id);
         $views = Visit::getAll($model->id); // Считаем просмотры
         $likes = Like::getAll($model->id);  // Считаем лайки
-        return $this->render('@vendor/lowbase/yii2-document/views/document/view', [
+        return $this->render('@vendor/macfiss/yii2-document/views/document/view', [
             'model' => $model,
             'views' => ($views) ?  $views[0]->count : 0,
             'likes' => ($likes) ?  $likes[0]->count : 0
@@ -97,7 +97,7 @@ class DocumentController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
-        return $this->render('@vendor/lowbase/yii2-document/views/document/create', [
+        return $this->render('@vendor/macfiss/yii2-document/views/document/create', [
             'model' => $model,
         ]);
     }
@@ -119,7 +119,7 @@ class DocumentController extends Controller
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
-        return $this->render('@vendor/lowbase/yii2-document/views/document/update', [
+        return $this->render('@vendor/macfiss/yii2-document/views/document/update', [
             'model' => $model,
         ]);
     }
@@ -292,7 +292,7 @@ class DocumentController extends Controller
         $views = Visit::getAll($model->id); // Считаем просмотры
         $likes = Like::getAll($model->id);  // Считаем лайки
         // Если задан шаблон отображения, то отображаем согласно нему, иначе стандартное отображение статьи
-        $template = (isset($model->template) && $model->template->path) ? $model->template->path : '@vendor/lowbase/yii2-document/views/document/template/default';
+        $template = (isset($model->template) && $model->template->path) ? $model->template->path : '@vendor/macfiss/yii2-document/views/document/template/default';
         return $this->render($template, [
             'model' => $model,
             'views' => ($views) ?  $views[0]->count : 0,
@@ -322,7 +322,7 @@ class DocumentController extends Controller
         $model->template_id = Yii::$app->request->post('template_id');
         $model->fillFields();   // Заполняем поля согласно новому шаблону
 
-        return $this->renderAjax('@vendor/lowbase/yii2-document/views/document/_fields', [
+        return $this->renderAjax('@vendor/macfiss/yii2-document/views/document/_fields', [
             'model' => $model,
         ]);
     }
@@ -345,7 +345,7 @@ class DocumentController extends Controller
             'value' => '',
             'position' => ''
         ];
-        return $this->renderAjax('@vendor/lowbase/yii2-document/views/document/_field', [
+        return $this->renderAjax('@vendor/macfiss/yii2-document/views/document/_field', [
             'model' => $model,
             'field' => $field,
             'field_id' => $field_id,

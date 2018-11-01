@@ -1,5 +1,5 @@
 {
-  "name": "lowbase/yii2-document",
+  "name": "macfiss/yii2-document",
   "description": "Yii2 document module",
   "type": "yii2-extension",
   "keywords": ["yii2","extension","document","module"],

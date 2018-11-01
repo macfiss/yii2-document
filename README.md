@@ -16,11 +16,11 @@ Yii2-document - независимый модуль из комплекта lowB
 Установка
 ---------
 ```
-php composer.phar require --prefer-dist lowbase/yii2-document "*"
+php composer.phar require --prefer-dist macfiss/yii2-document "*"
 ```
 или
 ```
-"lowbase/yii2-document": "*"
+"macfiss/yii2-document": "*"
 ```
 
 Настройка конфигурационного файла
@@ -73,7 +73,7 @@ php composer.phar require --prefer-dist lowbase/yii2-document "*"
 ------------------
 Запускаем миграции командой:
 ```
-php yii migrate/up --migrationPath=@vendor/lowbase/yii2-document/migrations
+php yii migrate/up --migrationPath=@vendor/macfiss/yii2-document/migrations
 ```
 Работа с документами
 --------------------

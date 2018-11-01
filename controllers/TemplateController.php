@@ -50,7 +50,7 @@ class TemplateController extends Controller
         $searchModel = new TemplateSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('@vendor/lowbase/yii2-document/views/template/index', [
+        return $this->render('@vendor/macfiss/yii2-document/views/template/index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
@@ -64,7 +64,7 @@ class TemplateController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('@vendor/lowbase/yii2-document/views/template/view', [
+        return $this->render('@vendor/macfiss/yii2-document/views/template/view', [
             'model' => $this->findModel($id),
         ]);
     }
@@ -81,7 +81,7 @@ class TemplateController extends Controller
             Yii::$app->getSession()->setFlash('success', Yii::t('document', 'Новый шаблон создан.'));
             return $this->redirect(['update', 'id' => $model->id]);
         } else {
-            return $this->render('@vendor/lowbase/yii2-document/views/template/create', [
+            return $this->render('@vendor/macfiss/yii2-document/views/template/create', [
                 'model' => $model,
             ]);
         }
@@ -105,7 +105,7 @@ class TemplateController extends Controller
             Yii::$app->getSession()->setFlash('success', Yii::t('document', 'Шаблон отредактирован.'));
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('@vendor/lowbase/yii2-document/views/template/update', [
+            return $this->render('@vendor/macfiss/yii2-document/views/template/update', [
                 'model' => $model,
                 'searchModel' => $searchModel,
                 'dataProvider' => $dataProvider,
